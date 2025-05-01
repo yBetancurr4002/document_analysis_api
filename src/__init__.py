@@ -1,7 +1,11 @@
 from src.documento import validate_identity_document
 from icfes import validate_icfes_document
 from acta_grado import validate_school_certificate
-from certificado_electoral import validate_electoral_certificate
+# from certificado_electoral import pdf_to_image
+# from certificado_electoral import validate_electoral_certificate
+# from certificado_electoral import validate_electoral_certificate
+from certificado_electoral import validar_certificado_electoral_mejorado
+
 
 """
 DOCUMENTO
@@ -63,14 +67,14 @@ print(resultado_acta)
 """
 CERTIFICADO ELECTORAL
 """
-ruta_electoral = "files/Certificado_Electora.pdf"
+ruta_electoral = "files/Certificado_Electoral.pdf"
 input_datos_electoral = {
-    "nombres": "AREVALO MUÑOZ MONICA ALEJANDRA",
-    "documento": "1021669298",
-    "fecha": "13 DE MARZO 2022"
+    "nombres": "miguel puentes",
+    "numero": "1002580961",
+    "fecha": "19 DE JUNIO 2022"
 }
 
-resultado_electoral = validate_electoral_certificate(ruta_electoral, input_datos_electoral)
+resultado_electoral = validar_certificado_electoral_mejorado(ruta_electoral, input_datos_electoral)
 
 print("Resultado validación ELECTORAL:")
 print(resultado_electoral)
